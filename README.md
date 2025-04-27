@@ -22,7 +22,7 @@ This platform empowers you to **train machine learning models** while keeping tr
   Train and evaluate models like Iris, Wine, and Breast Cancer datasets, while tracking their CO₂ emissions in real time.            
 
 - 🤖 **Chatbot Carbon Emission**  
-  A chatbot powered by OpenAI that tracks the carbon emissions of each chat interaction, promoting greener conversations.
+  A chatbot powered by OpenAI that tracks the carbon emissions of each chat interaction.
 
 ---
 
