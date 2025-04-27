@@ -61,8 +61,6 @@ This platform empowers you to **train machine learning models** while keeping tr
 ---
 
 ### 🔍 What You Can Explore:
-- 🧠 **GreenModel Tracker**  
-    Train and evaluate models, track their CO₂ emissions in real time.
     
 - 📘 **Carbon Emission Information**  
     Learn about carbon dioxide emissions, their impact, and how we can reduce them.
@@ -72,6 +70,12 @@ This platform empowers you to **train machine learning models** while keeping tr
             
 - 🌍 **Global CO₂ Emissions Dashboard**  
     Visualize emissions data across countries with interactive graphs and charts.
+
+- 🧠 **GreenModel Tracker**  
+    Train and evaluate models, track their CO₂ emissions in real time.            
+
+- 🤖 **Chatbot Carbon Emission**
+    Chatbot powered by OpenAI that also tracks the carbon emissions of each chat interaction.
 
 ---
 
