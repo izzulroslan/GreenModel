@@ -4,4 +4,3 @@ pandas
 plotly.express
 openai
 langchain
-random
