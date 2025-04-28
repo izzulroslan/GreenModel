@@ -68,7 +68,7 @@ if theme == "Light Mode":
 
 st.title("🌱 GreenModel: AI Carbon Emission Tracker")
 
-with st.expander("📖 GreenModel: AI Carbon Emission Tracker User Guide"):
+with st.expander("📖 ML Model Training Carbon Emission Tracker User Guide"):
     st.markdown("""
     ## ℹ️ User Guide
     ### 1. Choose a Dataset 
