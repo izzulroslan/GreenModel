@@ -1,0 +1,6 @@
+streamlit
+codecarbon
+pandas
+plotly.express
+openai
+langchain
