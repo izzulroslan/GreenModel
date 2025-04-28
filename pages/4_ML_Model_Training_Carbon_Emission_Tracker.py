@@ -66,7 +66,7 @@ if theme == "Light Mode":
         </style>
     """, unsafe_allow_html=True)
 
-st.title("🌱 GreenModel: AI Carbon Emission Tracker")
+st.title("🌱 ML Model Training Carbon Emission Tracker")
 
 with st.expander("📖 ML Model Training Carbon Emission Tracker User Guide"):
     st.markdown("""
