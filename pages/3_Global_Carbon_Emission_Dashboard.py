@@ -2,83 +2,11 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import random
+from theme import apply_theme
 
 st.set_page_config(page_title="Global CO₂ Emissions", layout="centered")
 
-# ✅ Initialize theme state once
-if "theme" not in st.session_state:
-    st.session_state["theme"] = "Light Mode"
-
-# ✅ Initialize toggle state for UI control (separate from actual theme)
-if "toggle_state" not in st.session_state:
-    st.session_state["toggle_state"] = (st.session_state["theme"] == "Dark Mode")
-
-# ✅ Handle toggle with rerun to ensure proper state change
-new_toggle = st.toggle("Dark Mode 🌙", value=st.session_state["toggle_state"])
-if new_toggle != st.session_state["toggle_state"]:
-    st.session_state["toggle_state"] = new_toggle
-    st.session_state["theme"] = "Dark Mode" if new_toggle else "Light Mode"
-    st.rerun()  # 🔁 Force rerun after changing theme
-
-# ✅ Use the updated theme
-theme = st.session_state["theme"]
-
-# ✅ Apply the theme CSS
-if theme == "Light Mode":
-    st.markdown("""
-        <style>
-        /* Change the top header bar */
-        header[data-testid="stHeader"] {
-            background-color: #66bb6a;
-        }
-        [data-testid="stAppViewContainer"] {
-            background-color: #e8ebe0;
-            color: #000000;
-        }
-        [data-testid="stExpander"] {
-            background-color: #e0f2f1; /* light greenish-blue */
-            border: 1px solid #66bb6a; /* optional: green border */
-            border-radius: 10px;
-        }
-        [data-testid="stSidebar"] {
-            background-color: #a5d6a7;
-            color: #000000 !important;
-        }
-        h1, h2, h3, h4, h5, h6, p, li, span, div {
-            color: #5D5D5D !important;
-        }
-        .stButton>button {
-            background-color: #66bb6a;
-            color: white;
-        }
-        .stButton>button:hover {
-            background-color: #66bb6a;
-            color: black;
-        }
-        div[data-baseweb="select"] {
-            background-color: #e8f5e9; /* light green background */
-            border-radius: 10px;
-            padding: 5px;
-            color: black; /* text color */
-        }
-        div[data-baseweb="select"] ul li:hover {
-            background-color: #f7b2a5;  /* change to desired bar color */
-            color: white;  /* change to desired text color */
-        }
-        div[data-baseweb="popover"] {
-        background-color: #f1f8e9; /* lighter green for dropdown background */
-        color: black; /* text color */
-        }
-        div[data-baseweb="option"] {
-            background-color: #f1f8e9; /* individual option background */
-            color: black; /* text color */
-        }
-        div[data-baseweb="option"]:hover {
-            background-color: #66bb6a; /* hover effect */
-            color: white; /* hover text color */
-        }        
-        </style>
-    """, unsafe_allow_html=True)
+apply_theme()
 
 st.title("🌍 Global CO₂ Emissions Dashboard")
 
