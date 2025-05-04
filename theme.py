@@ -25,8 +25,10 @@ def apply_theme():
         border-radius: 10px;
     }
     .stButton>button {
-        background-color: #66bb6a;
+        background-color: #e0f2f1;
         color: white;
+        border: 1px solid #66bb6a;
+        border-radius: 10px;
     }
     .stButton>button:hover {
         background-color: #66bb6a;
@@ -56,8 +58,10 @@ def apply_theme():
         border-radius: 10px;
     }
     .stButton>button {
-        background-color: #66bb6a;
+        background-color: #333;
         color: white;
+        border: 1px solid #66bb6a;
+        border-radius: 10px;
     }
     .stButton>button:hover {
         background-color: #66bb6a;
