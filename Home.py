@@ -1,57 +1,27 @@
 import streamlit as st
 import random
+from theme import apply_theme  # ⬅️ import the theme function
 
 # ✅ Set page config FIRST
 st.set_page_config(page_title="GreenModel: Home", layout="centered")
 
-# ✅ Initialize theme state once
+# Step 1: Initialize default theme in session state if not set
 if "theme" not in st.session_state:
-    st.session_state["theme"] = "Light Mode"
+    st.session_state["theme"] = "Light Mode"  # default
 
-# ✅ Initialize toggle state for UI control (separate from actual theme)
-if "toggle_state" not in st.session_state:
-    st.session_state["toggle_state"] = (st.session_state["theme"] == "Dark Mode")
+# Step 2: Radio button uses current session value as default
+theme = st.radio(
+    "🌓 Choose Theme:",
+    ("Light Mode", "Dark Mode"),
+    index=0 if st.session_state["theme"] == "Light Mode" else 1
+)
 
-# ✅ Handle toggle with rerun to ensure proper state change
-new_toggle = st.toggle("Dark Mode 🌙", value=st.session_state["toggle_state"])
-if new_toggle != st.session_state["toggle_state"]:
-    st.session_state["toggle_state"] = new_toggle
-    st.session_state["theme"] = "Dark Mode" if new_toggle else "Light Mode"
-    st.rerun()  # 🔁 Force rerun after changing theme
+# Step 3: Update session state if user changed theme
+st.session_state["theme"] = theme
 
-# ✅ Use the updated theme
-theme = st.session_state["theme"]
+# Apply theme based on selected
+apply_theme()
 
-# ✅ Apply the theme CSS
-if theme == "Light Mode":
-    st.markdown("""
-        <style>
-        /* Change the top header bar */
-        header[data-testid="stHeader"] {
-            background-color: #66bb6a;
-        }
-        [data-testid="stAppViewContainer"] {
-            background-color: #e8ebe0;
-            color: #000000;
-        }
-        [data-testid="stSidebar"] {
-            background-color: #a5d6a7;
-        }
-        h1, h2, h3, h4, h5, h6, p, li, span, div {
-            color: #343434 !important;
-        }
-        .stButton>button {
-            background-color: #66bb6a;
-            color: white;
-        }
-        .stButton>button:hover {
-            background-color: #66bb6a;
-            color: black;
-        }
-        </style>
-    """, unsafe_allow_html=True)
-
-# ✅ If theme is dark, use default Streamlit theme (no override)
 st.title("🌱 Welcome to GreenModel")
 
 st.markdown("""
@@ -74,7 +44,7 @@ This platform empowers you to **train machine learning models** while keeping tr
 - 🧠 **GreenModel Tracker**  
     Train and evaluate models, track their CO₂ emissions in real time.            
 
-- 🤖 **Chatbot Carbon Emission**  
+- 🤖 **Chatbot Carbon Emission**
     Chatbot powered by OpenAI that also tracks the carbon emissions of each chat interaction.
 
 ---
