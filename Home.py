@@ -26,7 +26,7 @@ st.title("🌱 Welcome to GreenModel")
 
 st.markdown("""
 Welcome to **GreenModel: AI Carbon Emission Tracker**!  
-This platform empowers you to **train machine learning models** while keeping track of **carbon emissions**.
+This platform empowers you to train and evaluate machine learning model and interact with an AI chatbot, all while monitoring the carbon footprint of each process in real time.
 
 ---
 
@@ -41,21 +41,28 @@ This platform empowers you to **train machine learning models** while keeping tr
 - 🌍 **Global CO₂ Emissions Dashboard**  
     Visualize emissions data across countries with interactive graphs and charts.
 
-- 🧠 **GreenModel Tracker**  
+- 🧠 **ML Model Training Carbon Emission Tracker**  
     Train and evaluate models, track their CO₂ emissions in real time.            
 
-- 🤖 **Chatbot Carbon Emission**
-    Chatbot powered by OpenAI that also tracks the carbon emissions of each chat interaction.
+- 🤖 **Chatbot Carbon Emission Tracker**  
+    Chat with an OpenAI-powered assistant, and track the CO₂ emissions generated per response.  
+    Use the 🌳 Green Mode toggle in the sidebar to switch between high-efficiency (lower emissions) and creative (higher emissions) model settings.
 
 ---
 
 ### 🌟 About GreenModel
 - ✅ Measures real-world carbon footprint of AI models
 - ✅ Powered by [CodeCarbon](https://mlco2.github.io/codecarbon/)
-- ✅ Promotes greener, more sustainable AI practices
-
+- ✅ Encourages sustainable and responsible AI development
+- ✅ Promotes awareness of digital carbon footprints
+- ✅ Educates users on the environmental cost of computation
 ---
 
+### 📣 Spread Awareness & Educate Others
+
+GreenModel is more than just a tool — it's a platform for **raising awareness** about the environmental impact of AI.  
+Whether you're a student, developer, researcher, or just curious, use this app to **explore**, **learn**, and **inspire others** to build a greener future in tech.
+            
 Made with ❤️ by [Izzul Roslan](https://github.com/izzulroslan)
 """)
 
