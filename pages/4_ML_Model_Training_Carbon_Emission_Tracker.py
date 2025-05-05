@@ -21,27 +21,32 @@ st.title("🌱 ML Model Training Carbon Emission Tracker")
 
 with st.expander("📖 ML Model Training Carbon Emission Tracker User Guide"):
     st.markdown("""
-    ## ℹ️ User Guide
-    ### 1. Choose a Dataset 
+    **ℹ️ User Guide**
+                
+    **1. Choose a Dataset**
+                
     Select from `Iris`, `Wine`, or `Breast Cancer` datasets. These are classic machine learning datasets used for classification tasks.
 
-    ### 2. Choose a Model 
+    **2. Choose a Model**
+                
     Pick between:
     - `Random Forest`: A tree-based ensemble model.
     - `Logistic Regression`: A simple linear model for classification.
 
-    ### 3. Set Parameters
+    **3. Set Parameters**
+                
     Adjust:
     - `Number of Trees` for Random Forest  
     - `Max Iterations` for Logistic Regression  
 
-    ### 4. Train & Track  
+    **4. Train & Track**
+                
     Click **Train Model & Track Emissions** to:
     - Train the selected model on the dataset
     - Measure CO₂ emissions using CodeCarbon
     - See the model’s accuracy and emissions (in grams)
 
-    ### 📈 Additional Insights
+    **📈 Additional Insights**
 
     - **Previous Runs Table**: Shows accuracy & CO₂ for all your training runs.
     - **Emissions Chart**: Visualizes emissions from each run.
