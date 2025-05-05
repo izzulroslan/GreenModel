@@ -35,7 +35,7 @@ with st.expander("📘 Chatbot Carbon Emission Tracker User Guide"):
         - Display the emissions in **grams of CO₂**.
         - Update a **line chart** showing emissions history throughout the session.
 
-    ### 🌳 About the Green Model Toggle:
+    **🌳 About the Green Model Toggle:**   
     
     - You can activate **Green Model** in the sidebar using the 🌳 toggle switch.
     - When enabled, the chatbot uses a **more efficient configuration**:
