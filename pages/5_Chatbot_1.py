@@ -11,6 +11,7 @@ st.set_page_config(page_title="Chatbot Carbon Emission Tracker", layout="centere
 apply_theme()
 
 st.title("🌱 Chatbot Carbon Emission Tracker")
+st.caption("🚀 A Streamlit chatbot powered by OpenAI + CodeCarbon tracking 🌱")
 
 # User Guide in Expander
 with st.expander("📘 Chatbot Carbon Emission Tracker User Guide"):
@@ -65,7 +66,7 @@ if prompt and not openai_api_key:
 if openai_api_key and prompt:
     with st.spinner("Generating responses and tracking emissions..."):
         try:
-            MAX_TOKENS = 300
+            MAX_TOKENS = 500
 
             # Tracker for temperature 1.0 (creative model)
             tracker_normal = EmissionsTracker(project_name="Temp 1.0")
@@ -91,6 +92,11 @@ if openai_api_key and prompt:
             )
             emissions_greenmodel = tracker_greenmodel.stop()
 
+            # Convert to grams
+            emissions_normal_grams = emissions_normal * 1000
+            emissions_greenmodel_grams = emissions_greenmodel * 1000
+
+
         except Exception as e:
             st.error(f"An error occurred: {e}")
 
@@ -102,27 +108,27 @@ if openai_api_key and prompt:
             st.subheader("Results")
             st.write("### 🟣 Response with Normal (More Creative):")
             st.info(response_normal.choices[0].message.content)
-            st.write(f"🌍 Emissions for Normal Model: `{emissions_normal:.6f} kg CO₂`")
+            st.write(f"🌍 Emissions for Normal Model: `{emissions_normal_grams:.4f} grams CO₂`")
 
             st.write("---")
 
             st.write("### 🔵 Response with Green Model (More Deterministic):")
             st.success(response_greenmodel.choices[0].message.content)
-            st.write(f"🌍 Emissions for Green Model: `{emissions_greenmodel:.6f} kg CO₂`")
+            st.write(f"🌍 Emissions for Green Model: `{emissions_greenmodel_grams:.4f} grams CO₂`")
 
             # Sidebar Update
             with st.sidebar:
-                st.metric(label="Emissions Normal Model", value=f"{emissions_normal:.6f} kg CO₂")
-                st.metric(label="Emissions Green Model", value=f"{emissions_greenmodel:.6f} kg CO₂")        
+                st.metric(label="Emissions Normal Model", value=f"{emissions_normal_grams:.4f} g CO₂")
+                st.metric(label="Emissions Green Model", value=f"{emissions_greenmodel_grams:.4f} g CO₂")
+        
 
                 st.write("---")
                 st.write("📊 **Emission Comparison Chart**")
                 df_emissions = pd.DataFrame({
                     "Model": ["Normal Model", "Green Model"],
-                    "CO₂ Emissions (kg)": [emissions_normal, emissions_greenmodel]
+                    "CO₂ Emissions (grams)": [emissions_normal_grams, emissions_greenmodel_grams]
                 })
                 st.bar_chart(df_emissions.set_index("Model"))
-
 
 # Random Eco Tip or Fact
 did_you_know_facts = [
