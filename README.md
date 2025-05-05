@@ -32,6 +32,16 @@ The platform also includes educational sections about carbon emissions, a global
 
 - ✅ Measures the real-world carbon footprint of AI model training and usage
 - ✅ Powered by [CodeCarbon](https://mlco2.github.io/codecarbon/)
+
+---
+### 📣 Spread Awareness & Educate Others
+
+GreenModel is more than just a tool — it's a platform for **raising awareness** about the environmental impact of AI.  
+Whether you're a student, developer, researcher, or just curious, use this app to **explore**, **learn**, and **inspire others** to build a greener future in tech.
+
+---
+
+Made with ❤️ by [Izzul Roslan](https://github.com/izzulroslan)
 - ✅ Promotes greener, more sustainable AI practices
 - ✅ Simple, interactive, and eco-friendly UI with Light and Dark Modes
 
