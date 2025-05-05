@@ -44,6 +44,6 @@ Whether you're a student, developer, researcher, or just curious, use this app t
 
 ---
 
-Made with ❤️ by [Izzul Roslan](https://github.com/izzulroslan)
-
 Thank you for making AI development greener with **GreenModel**! 🌱
+
+Made with ❤️ by [Izzul Roslan](https://github.com/izzulroslan)
