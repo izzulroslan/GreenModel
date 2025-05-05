@@ -12,13 +12,14 @@ st.title("🌍 Global CO₂ Emissions Dashboard")
 
 with st.expander("📖 Global CO₂ Emissions Dashboard User Guide and Data Source"):
     st.markdown("""
-    ## ℹ️ User Guide
+    **ℹ️ User Guide**
 
-    ### 1. How to Use
+    **1. How to Use**
     - **Select a country** to see its emissions trend.
     - **View the Top 10 Emitters** for the latest year.
 
-    ### 2. Data Source
+    **2. Data Source**
+                
     [Our World in Data - CO₂ and Greenhouse Gas Emissions](https://ourworldindata.org/co2-and-other-greenhouse-gas-emissions)
     - Annual emissions by country (million tonnes)
     - Years: 2000-2022
