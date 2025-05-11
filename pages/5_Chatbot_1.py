@@ -68,7 +68,7 @@ if openai_api_key and prompt:
         try:
             MAX_TOKENS = 500
 
-            # Tracker for temperature 1.0 (creative model)
+            # Tracker for temperature 1.0 (normal model)
             tracker_normal = EmissionsTracker(project_name="Temp 1.0")
             tracker_normal.start()
             response_normal = client.chat.completions.create(
@@ -76,7 +76,7 @@ if openai_api_key and prompt:
                 messages=[{"role": "user", "content": prompt}],
                 temperature=1.0,
                 max_tokens=MAX_TOKENS,
-                presence_penalty=1.5,
+                presence_penalty=1.0,
                 frequency_penalty=0.5
             )
             emissions_normal = tracker_normal.stop()
@@ -106,13 +106,13 @@ if openai_api_key and prompt:
             st.code(prompt, language="markdown")
 
             st.subheader("Results")
-            st.write("### 🟣 Response with Normal (More Creative):")
+            st.write("### 🟣 Response with Normal Model:")
             st.info(response_normal.choices[0].message.content)
             st.write(f"🌍 Emissions for Normal Model: `{emissions_normal_grams:.4f} grams CO₂`")
 
             st.write("---")
 
-            st.write("### 🔵 Response with Green Model (More Deterministic):")
+            st.write("### 🔵 Response with Green Model:")
             st.success(response_greenmodel.choices[0].message.content)
             st.write(f"🌍 Emissions for Green Model: `{emissions_greenmodel_grams:.4f} grams CO₂`")
 
