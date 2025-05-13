@@ -17,7 +17,9 @@ theme = st.radio(
 )
 
 # Step 3: Update session state if user changed theme
-st.session_state["theme"] = theme
+if theme != st.session_state["theme"]:
+    st.session_state["theme"] = theme
+    st.rerun()  # 🔁 Force rerun immediately
 
 # Apply theme based on selected
 apply_theme()
