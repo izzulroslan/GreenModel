@@ -72,7 +72,7 @@ model_type = st.radio("Model", ["Random Forest", "Logistic Regression"])
 if model_type == "Random Forest":
     n_estimators = st.slider("🌲 Number of Trees", 10, 200, 100, 10)
 else:
-    max_iter = st.slider("🔁 Max Iterations (Epochs)", 50, 200, 100, 50)
+    max_iter = st.slider("🔁 Max Iterations (Epochs)", 10, 200, 100, 10)
 
 # Load dataset
 def load_data(name):
